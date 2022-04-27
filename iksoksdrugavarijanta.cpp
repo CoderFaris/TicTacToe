@@ -4,7 +4,6 @@ Naziv projekta - Iksoks
 Skola - Peta gimnazija II-5
 
 */
-
 #include <iostream>
 #include <ctime>
 #include <random>
@@ -12,7 +11,6 @@ Skola - Peta gimnazija II-5
 #include <limits>
 
 using namespace std;
-
 
 class iksoks
 {
@@ -431,10 +429,6 @@ void iksoks::izbor_racunara()
 
 }
 
-
-
-
-
 void iksoks::x_igrac()
 {
     
@@ -502,8 +496,6 @@ void iksoks::o_igrac()
         }
     }
 }
-
-
 
 void iksoks::nacrtaj_polja()
 {
@@ -586,12 +578,6 @@ int main()
 
    }
     
-    
-
-    
-
    // da se odmah ne ugasi
    system("pause"); 
-   
-   
 }
