@@ -21,9 +21,11 @@ class iksoks
     struct aiIgrac
     {
 
-        unsigned int izbor = 0;    
+        int izbor = 0;    
 
     };
+
+    // Implementacija minimax algoritma
 
     aiIgrac minimax()
     {
@@ -31,7 +33,7 @@ class iksoks
         int rezultat = numeric_limits<int>::max();
         aiIgrac potez;
 
-        for (unsigned int i=0; i<9; ++i)
+        for (int i=0; i<9; ++i)
         {
 
             if (polje[i] == ' ')
@@ -68,7 +70,7 @@ class iksoks
 
         int rezultat = numeric_limits<int>::min();
 
-        for (unsigned int i=0; i<9; ++i)
+        for (int i=0; i<9; ++i)
         {
 
             if (polje[i] ==' ')
@@ -95,7 +97,7 @@ class iksoks
 
         int rezultat = numeric_limits<int>::max();
 
-        for (unsigned int i=0; i<9; ++i)
+        for (int i=0; i<9; ++i)
         {
 
             if (polje[i] ==' ')
@@ -112,6 +114,8 @@ class iksoks
         return rezultat;
 
     }
+
+    
 
     public :
         void nacrtaj_polja();
