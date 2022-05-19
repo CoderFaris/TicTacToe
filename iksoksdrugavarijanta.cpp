@@ -14,7 +14,7 @@ using namespace std;
 
 class iksoks
 {
-    
+   
     char polje[9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
 
 
@@ -115,7 +115,7 @@ class iksoks
 
     }
 
-    
+   
 
     public :
         void nacrtaj_polja();
@@ -275,7 +275,7 @@ void iksoks::kompjuter_protiv_igraca()
             nacrtaj_polja(); // 2
             cout << "Nerijeseno" << '\n';
             break;
-            
+           
 
         }
 
@@ -342,7 +342,7 @@ void iksoks::kompjuter_protiv_igraca_hard()
             nacrtaj_polja(); // 2
             cout << "Nerijeseno" << '\n';
             break;
-            
+           
 
         }
 
@@ -372,7 +372,7 @@ void iksoks::igrac_protiv_igraca()
             x_igrac();
 
         }
-        
+       
         else
         {
 
@@ -429,26 +429,39 @@ void iksoks::izbor_racunara()
     } while (polje[izbor]!=' ');
     polje[izbor] = 'O';
 
-    
+   
 
 }
 
 void iksoks::x_igrac()
 {
-    
+   
     while(true)
     {
-
+        start:
         cout << "Izaberi poziciju (1-9): ";
         int izborX;
         cin >> izborX;
         --izborX; // smanjuje se izbor za 1 jer pozicije idu od 0-8, a prikazane su 1-9
-        if(izborX < 0 || izborX > 8)
+       
+       
+
+        if(!cin) // ili if(cin.fail())
+        {  
+       
+            cin.clear(); // reset failbit
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // preskoci los input :)
+            cout << ">:(" << '\n';
+   
+        }
+        else if(izborX < 0 || izborX > 8)
         {
 
             cout << "Nepostojece polje" << '\n';
 
         }
+       
+       
 
         else if(polje[izborX] != ' ')
         {
@@ -469,7 +482,7 @@ void iksoks::x_igrac()
 
 void iksoks::o_igrac()
 {
-    
+   
     while(true)
     {
 
@@ -477,7 +490,18 @@ void iksoks::o_igrac()
         int izborO;
         cin >> izborO;
         --izborO; // smanjuje se izbor za 1 jer pozicije idu od 0-8, a prikazane su 1-9
-        if(izborO < 0 || izborO > 8)
+       
+       
+        if(!cin) // ili if(cin.fail())
+        {  
+       
+            cin.clear(); // reset failbit
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // preskoci los input :)
+            cout << ">:(" << '\n';
+   
+        }
+       
+        else if(izborO < 0 || izborO > 8)
         {
 
             cout << "Nepostojece polje" << '\n';
@@ -503,7 +527,7 @@ void iksoks::o_igrac()
 
 void iksoks::nacrtaj_polja()
 {
-    
+   
     cout << "     |     |     " << endl;
     cout << "  " << polje[0] << "  |  " << polje[1] << "  |  " << polje[2] << endl;
 
@@ -518,8 +542,8 @@ void iksoks::nacrtaj_polja()
     cout << "  " << polje[6] << "  |  " << polje[7] << "  |  " << polje[8] << endl;
 
     cout << "     |     |     " << endl << endl;
-    
-    
+   
+   
 };
 
 
@@ -568,7 +592,7 @@ int main()
             cout << "Unesi 1 ili 2" << '\n';
 
         }
-        
+       
        
        break;
 
@@ -576,12 +600,12 @@ int main()
        igra.igrac_protiv_igraca();
        break;
 
-       default : 
+       default :
        cout << "Unesi 1 ili 2" << '\n';
        break;
 
    }
-    
+   
    // da se odmah ne ugasi
-   system("pause"); 
+   system("pause");
 }
