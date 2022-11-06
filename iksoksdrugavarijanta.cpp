@@ -1,9 +1,4 @@
-/*
 
-Naziv projekta - Iksoks
-Skola - Peta gimnazija II-5
-
-*/
 #include <iostream>
 #include <ctime>
 #include <random>
